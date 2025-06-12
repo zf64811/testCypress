@@ -1,13 +1,11 @@
 {
-  "scripts": {
-    "cy:open": "cypress open",
-    "test":"cypress run",
-    "merge:reports":"mochawesome-merge cypress/reports/mochawesome*.json --output cypress/reports/merged-report.json",
-    "report:html":"marge cypress/reports/merged-report.json -f report -o cypress/reports",
-    "clean:reports": "rm -rf cypress/reports/*",
-    "test:report": "npm run test && npm run merge:reports && npm run report:html",
-    "cypress:test": "npm run clean:reports && cypress run",
-    "ci:test": "npm run cypress:test && npm run merge:reports && npm run report:html"
+"scripts": {
+    "test:chrome": "cypress run --browser chrome",         
+   "clean:reports": "rimraf cypress/results && rimraf cypress/mochawesome-html-report",
+    "report:merge": "mochawesome-merge cypress/results/**/*.json > cypress/merged.json",  
+    "report:generate": "marge cypress/merged.json --reportDir cypress/mochawesome-html-report --reportTitle \"Mochawesome Report\"",
+    "cypress:test": "cypress run ",
+    "test:run":"npm run cypress:test && npm run report:merge && npm run report:generate"
   },
   "devDependencies": {
     "cypress": "^14.4.1",

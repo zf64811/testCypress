@@ -1,0 +1,163 @@
+{
+  "stats": {
+    "suites": 2,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2025-06-12T13:41:46.269Z",
+    "end": "2025-06-12T13:41:55.675Z",
+    "duration": 5471,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1369773e-7ed0-4c02-9e43-27a613ca6746",
+      "title": "",
+      "fullFile": "cypress\\e2e\\test2.cy.js",
+      "file": "cypress\\e2e\\test2.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "e85b7f29-f9a4-40d9-a7d8-5abf8b596fd8",
+          "title": "My First Test2",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Visits the Kitchen Sink2",
+              "fullTitle": "My First Test2 Visits the Kitchen Sink2",
+              "timedOut": null,
+              "duration": 2511,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://example.cypress.io');\ncy.contains('type').click();\ncy.url().should('include', '/commands/actions');\ncy.get('.action-email').type('fake@mail.com');\ncy.get('.action-email').should('have.value', 'fake@mail.com');\n/* ==== Generated with Cypress Studio ==== */\ncy.get('#password1').clear('1');\ncy.get('#password1').type('123456');\ncy.get('#fullName1').clear('21');\ncy.get('#fullName1').type('213124');\ncy.get('#description').clear('31');\ncy.get('#description').type('31');\ncy.get('#fullName1').click();\ncy.get('#fullName1').click();\ncy.get('#fullName1').clear('F');\ncy.get('#fullName1').type('Fam');\ncy.get('.action-form > .btn').click();\n/* ==== End Cypress Studio ==== */",
+              "err": {},
+              "uuid": "e5427863-b2d4-424c-ab1a-b64feafb9b95",
+              "parentUUID": "e85b7f29-f9a4-40d9-a7d8-5abf8b596fd8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e5427863-b2d4-424c-ab1a-b64feafb9b95"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2511,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    },
+    {
+      "uuid": "7d54982a-f47e-4e9b-9e78-4e98cccc0411",
+      "title": "",
+      "fullFile": "cypress\\e2e\\test.cy.js",
+      "file": "cypress\\e2e\\test.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1023d6a8-d7f7-4673-bea7-55add7218cfe",
+          "title": "My First Test",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Visits the Kitchen Sink",
+              "fullTitle": "My First Test Visits the Kitchen Sink",
+              "timedOut": null,
+              "duration": 2960,
+              "state": "passed",
+              "speed": "fast",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://example.cypress.io');\ncy.contains('type').click();\ncy.url().should('include', '/commands/actions');\ncy.get('.action-email').type('fake@mail.com');\ncy.get('.action-email').should('have.value', 'fake@mail.com');\n/* ==== Generated with Cypress Studio ==== */\ncy.get('#password1').clear('1');\ncy.get('#password1').type('123456');\ncy.get('#fullName1').clear('21');\ncy.get('#fullName1').type('213124');\ncy.get('#description').clear('31');\ncy.get('#description').type('31');\ncy.get('#fullName1').click();\ncy.get('#fullName1').click();\ncy.get('#fullName1').clear('F');\ncy.get('#fullName1').type('Fam');\ncy.get('.action-form > .btn').click();\n/* ==== End Cypress Studio ==== */",
+              "err": {},
+              "uuid": "1446f72e-e997-4396-9281-7144f3ad82c3",
+              "parentUUID": "1023d6a8-d7f7-4673-bea7-55add7218cfe",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1446f72e-e997-4396-9281-7144f3ad82c3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2960,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.2.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "cypress/results",
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.2.0"
+    }
+  }
+}

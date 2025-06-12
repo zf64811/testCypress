@@ -1,0 +1,44 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    container:
+      image: cypress/browsers:18.17.1-chrome118-ff120   # 使用官方 Cypress Docker 镜像:contentReference[oaicite:3]{index=3}
+      options: --user 1001    # (若使用 Firefox，则需指定非 root 用户:contentReference[oaicite:4]{index=4})
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run Cypress tests
+        # 即使测试失败也继续后续步骤，以便生成报告
+        run: npm run test:chrome || true
+
+      - name: Merge test results
+        run: npm run report:merge
+
+      - name: Generate Mochawesome HTML report
+        run: npm run report:generate
+
+      - name: Upload HTML report as artifact
+        uses: actions/upload-artifact@v4    # 上传构建产物:contentReference[oaicite:5]{index=5}
+        with:
+          name: mocha-report
+          path: cypress/mochawesome-html-report/index.html
+
+      # 可选：部署到 GitHub Pages
+      - name: Deploy to GitHub Pages
+        if: success() || failure()
+        uses: peaceiris/actions-gh-pages@v4   # 发布到 Pages:contentReference[oaicite:6]{index=6}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./cypress/mochawesome-html-report
