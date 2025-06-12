@@ -20,7 +20,7 @@ jobs:
         run: npm ci
 
       - name: Run Cypress tests
-        # 即使测试失败也继续后续步骤，以便生成报告
+
         run: npm run test:chrome || true
 
       - name: Merge test results
@@ -30,15 +30,14 @@ jobs:
         run: npm run report:generate
 
       - name: Upload HTML report as artifact
-        uses: actions/upload-artifact@v4 # 上传构建产物:contentReference[oaicite:5]{index=5}
+        uses: actions/upload-artifact@v4
         with:
           name: mocha-report
           path: cypress/mochawesome-html-report/index.html
 
-      # 可选：部署到 GitHub Pages
       - name: Deploy to GitHub Pages
         if: success() || failure()
-        uses: peaceiris/actions-gh-pages@v4 # 发布到 Pages:contentReference[oaicite:6]{index=6}
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./cypress/mochawesome-html-report
