@@ -10,7 +10,7 @@ describe.only('My First Test', () => {
       .should('have.value', 'fake@mail.com')
     /* ==== Generated with Cypress Studio ==== */
     cy.get('#password1').clear('1');
-    cy.get('#password1').type('123456');
+    cy.get('#password1').type('123454');
     cy.get('#fullName1').clear('21');
     cy.get('#fullName1').type('213124');
     cy.get('#description').clear('31');
