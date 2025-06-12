@@ -1,7 +1,7 @@
 {
 "scripts": {
     "test:chrome": "cypress run --browser chrome",         
-   "clean:reports": "rimraf cypress/results && rimraf cypress/mochawesome-html-report",
+    "clean:reports": "rimraf cypress/results && rimraf cypress/mochawesome-html-report",
     "report:merge": "mochawesome-merge cypress/results/**/*.json > cypress/merged.json",  
     "report:generate": "marge cypress/merged.json --reportDir cypress/mochawesome-html-report --reportTitle \"Mochawesome Report\"",
     "cypress:test": "cypress run ",
