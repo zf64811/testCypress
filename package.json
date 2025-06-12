@@ -2,9 +2,12 @@
   "scripts": {
     "cy:open": "cypress open",
     "test":"cypress run",
-    "merge-report":"mochawesome-merge cypress/reports/mochawesome*.json --output cypress/reports/merged-report.json",
-    "generate-html":"marge cypress/reports/merged-report.json -f report -o cypress/reports",
-    "test:report": "npm run test && npm run merge-report && npm run generate-html"
+    "merge:reports":"mochawesome-merge cypress/reports/mochawesome*.json --output cypress/reports/merged-report.json",
+    "report:html":"marge cypress/reports/merged-report.json -f report -o cypress/reports",
+    "clean:reports": "rm -rf cypress/reports/*",
+    "test:report": "npm run test && npm run merge:reports && npm run report:html",
+    "cypress:test": "npm run clean:reports && cypress run",
+    "ci:test": "npm run cypress:test && npm run merge:reports && npm run report:html"
   },
   "devDependencies": {
     "cypress": "^14.4.1",
