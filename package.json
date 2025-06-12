@@ -1,0 +1,15 @@
+{
+  "scripts": {
+    "cy:open": "cypress open",
+    "test":"cypress run",
+    "merge-report":"mochawesome-merge cypress/reports/mochawesome*.json --output cypress/reports/merged-report.json",
+    "generate-html":"marge cypress/reports/merged-report.json -f report -o cypress/reports",
+    "test:report": "npm run test && npm run merge-report && npm run generate-html"
+  },
+  "devDependencies": {
+    "cypress": "^14.4.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^6.2.0"
+  }
+}
