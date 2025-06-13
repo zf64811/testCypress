@@ -1,1 +1,19 @@
-{"scripts":{"test:chrome":"cypress run --browser chrome","clean:reports":"rimraf cypress/results && rimraf cypress/mochawesome-html-report","report:merge":"mochawesome-merge cypress/results/**/*.json > cypress/merged.json","report:generate":"marge cypress/merged.json --reportDir cypress/mochawesome-html-report --reportTitle \"Mochawesome Report\"","cypress:test":"cypress run ","test:run":"npm run cypress:test && npm run report:merge && npm run report:generate"},"devDependencies":{"cypress":"^14.4.1","mochawesome":"^7.1.3","mochawesome-merge":"^4.2.0","mochawesome-report-generator":"^6.2.0"},"dependencies":{"rimraf":"^6.0.1"}}
+{
+  "scripts": {
+    "test:chrome": "cypress run --browser chrome",
+    "clean:reports": "rimraf cypress/results && rimraf cypress/mochawesome-html-report",
+    "report:merge": "mochawesome-merge cypress/results/**/*.json > cypress/merged.json",
+    "report:generate": "marge cypress/merged.json --reportDir cypress/mochawesome-html-report --reportTitle \"Mochawesome Report\"",
+    "cypress:test": "cypress run ",
+    "test:run": "npm run cypress:test && npm run report:merge && npm run report:generate"
+  },
+  "devDependencies": {
+    "cypress": "^14.4.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^6.2.0"
+  },
+  "dependencies": {
+    "rimraf": "^6.0.1"
+  }
+}
